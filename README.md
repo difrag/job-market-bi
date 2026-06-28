@@ -58,42 +58,9 @@ Top parsed skills by job count:
 
 The dataset comes from Kaggle:
 
-[Data Analyst Job Postings - Google Search](data/raw/source.txt)
+[Data Analyst Job Postings - Kaggle]([data/raw/source.txt](https://www.kaggle.com/datasets/lukebarousse/data-analyst-job-postings-google-search?resource=download))
 
 The raw and processed CSV files are not included in this repository because they are large. The repo keeps the code, notebooks, SQL, and documentation needed to reproduce the work locally.
-
-## How The Project Is Organized
-
-```text
-job-market-bi/
-|-- data/
-|   |-- README.md
-|   |-- raw/
-|   |   `-- source.txt
-|   `-- processed/
-|-- docs/
-|   |-- screenshots/
-|   |-- business_questions.md
-|   |-- data_dictionary.md
-|   |-- data_model.md
-|   |-- data_quality_report.md
-|   `-- sql_load_validation.md
-|-- notebooks/
-|   |-- 01_data_cleaning.ipynb
-|   `-- 02_quality_analysis.ipynb
-|-- powerbi/
-|   |-- DAX_Measures.md
-|   `-- README.md
-|-- sql/
-|   |-- analytics_queries_sqlite.sql
-|   |-- create_sqlite_tables.sql
-|   `-- create_tables.sql
-|-- src/
-|   |-- load_sqlite_db.py
-|   `-- smoke_test_sql_queries.py
-|-- requirements.txt
-`-- README.md
-```
 
 ## Pipeline
 
