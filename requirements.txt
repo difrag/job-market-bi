@@ -1,0 +1,42 @@
+# Job Market Intelligence Dashboard - Python Dependencies
+
+# Install with:
+
+# pip install -r requirements.txt
+
+# Core data analysis
+
+pandas>=2.3.3
+numpy>=2.3.3
+
+# Notebooks / VS Code notebook support
+
+ipykernel
+notebook
+jupyterlab
+
+# Database / SQL
+
+SQLAlchemy
+
+# Environment variables
+
+python-dotenv
+
+# Visualization
+
+matplotlib
+seaborn
+plotly
+
+# Development tools
+
+black
+flake8
+pylint
+
+# Optional: SQL Server support
+
+# Uncomment this only if you actually connect to SQL Server.
+
+# pyodbc

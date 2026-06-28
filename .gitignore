@@ -1,0 +1,44 @@
+# Secrets and local environment
+.env
+venv/
+.venv/
+AGENTS.md
+
+# Python cache/build files
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Large data artifacts
+data/raw/*.csv
+data/raw/*.zip
+data/raw/*.parquet
+data/processed/**/*.csv
+data/processed/**/*.parquet
+data/**/*.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Keep lightweight data documentation
+!data/**/README.md
+!data/raw/source.txt
+
+# Power BI binary reports can exceed GitHub's normal file limits.
+# Commit screenshots/docs; use Releases or Git LFS if the PBIX must be shared.
+*.pbix
+
+# Temporary local inspection files
+temp_*
+tmp_*
+dataset_inspect*.txt
+*_inspect_out.txt
+*_run_notebook*.txt
