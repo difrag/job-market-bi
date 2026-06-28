@@ -31,33 +31,6 @@ I built it as a portfolio project to practice the full path from raw data to das
 ### Remote and Location Analysis
 
 ![Remote and Location Analysis](docs/screenshots/04_remote_location.png)
-
-## Current Progress
-
-Completed:
-
-- cleaned the raw job postings data
-- removed duplicate postings
-- parsed salary fields into annual salary ranges and bands
-- normalized skills into a skills table and a job-skill bridge table
-- added job title categories and seniority levels
-- created a data quality notebook and report
-- created a SQLite prep layer for SQL analysis
-- wrote and smoke-tested analytical SQL queries
-- started the Power BI dashboard
-
-Power BI pages built so far:
-
-- Executive Overview
-- Skills Demand
-- Salary Analysis
-- Remote and Location Analysis
-
-Still to finish:
-
-- final formatting pass
-- short written insights section
-
 ## Dataset Summary
 
 | Metric | Value |
