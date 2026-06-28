@@ -12,14 +12,25 @@ I built it as a portfolio project to practice the full path from raw data to das
 
 ## Dashboard Preview
 
-Screenshots will be added here after the final Power BI polish.
+### Executive Overview
 
-| Page | Screenshot file |
-| --- | --- |
-| Executive Overview | `docs/screenshots/01_executive_overview.png` |
-| Skills Demand | `docs/screenshots/02_skills_demand.png` |
-| Salary Analysis | `docs/screenshots/03_salary_analysis.png` |
-| Remote and Location Analysis | `docs/screenshots/04_remote_location.png` |
+![Executive Overview](docs/screenshots/01_executive_overview.png)
+
+### Skills Demand
+
+![Skills Demand](docs/screenshots/02_skills_demand.png)
+
+### Skills That Appear Together
+
+![Skills That Appear Together](docs/screenshots/02_1_skills_demand.png)
+
+### Salary Analysis
+
+![Salary Analysis](docs/screenshots/03_salary_analysis.png)
+
+### Remote and Location Analysis
+
+![Remote and Location Analysis](docs/screenshots/04_remote_location.png)
 
 ## Current Progress
 
@@ -40,12 +51,11 @@ Power BI pages built so far:
 - Executive Overview
 - Skills Demand
 - Salary Analysis
+- Remote and Location Analysis
 
 Still to finish:
 
-- Remote and Location Analysis page
 - final formatting pass
-- dashboard screenshots
 - short written insights section
 
 ## Dataset Summary
@@ -150,7 +160,7 @@ Looks at annualized salary by role, seniority, skill, salary band, and remote st
 
 **Remote and Location Analysis**
 
-Planned page for remote share, location quality, top locations, and how remote availability differs by job category and seniority.
+Shows remote share, location quality, top locations, and how remote availability differs by job category and seniority.
 
 ## Reproducing The Project
 
