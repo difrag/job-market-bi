@@ -77,7 +77,7 @@ Main outputs:
 
 ## Milestone 5: Power BI Dashboard
 
-Status: in progress
+Status: complete
 
 Completed:
 
@@ -85,19 +85,13 @@ Completed:
 - Skills Demand page
 - skill co-occurrence measure
 - Salary Analysis page
-- DAX documentation started
-
-Remaining:
-
 - Remote and Location Analysis page
-- dashboard layout polish
-- final visual QA
-- screenshots for GitHub
-- dashboard walkthrough documentation
+- dashboard screenshots for GitHub
+- DAX documentation
 
 ## Milestone 6: GitHub Portfolio Publishing
 
-Status: in progress
+Status: complete
 
 Completed:
 
@@ -107,11 +101,11 @@ Completed:
 - added data folder documentation
 - added GitHub publishing checklist
 - documented Power BI measures
+- removed placeholder and legacy files from the public repo
+- added dashboard screenshots
+- pushed the project to GitHub
 
-Remaining:
+Optional:
 
-- create first Git commit
-- create GitHub repository
-- add remote
-- push to GitHub
-- add dashboard screenshots after the dashboard is final
+- add a dashboard walkthrough document
+- attach the `.pbix` to a GitHub Release if sharing the report file is needed

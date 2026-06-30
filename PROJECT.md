@@ -40,19 +40,20 @@ The project is organized around these themes:
 - generated data quality checks and reports
 - built a SQLite analytical database
 - created and smoke-tested SQL analytics queries
-- started Power BI dashboard development
+- built Power BI dashboard pages and exported screenshots
 
 ## Current Dashboard Pages
 
 1. Executive Overview
 2. Skills Demand
 3. Salary Analysis
-
-Remaining:
-
 4. Remote and Location Analysis
-5. dashboard polish and screenshots
-6. final insights write-up
+
+## Final Polish Opportunities
+
+- refresh screenshots after major dashboard design changes
+- add a dashboard walkthrough document
+- optionally share the `.pbix` as a GitHub Release asset
 
 ## Main Learning Outcomes
 
