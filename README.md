@@ -1,13 +1,13 @@
 # Job Market BI Dashboard
 
-This project looks at job postings for data and BI roles and turns a messy Kaggle dataset into a small business intelligence workflow: cleaning, quality checks, SQL prep, and Power BI reporting.
+This project analyzes job postings for data and BI roles and turns a raw Kaggle dataset into a small business intelligence workflow: cleaning, validation, SQL preparation, and Power BI reporting.
 
-I built it as a portfolio project to practice the full path from raw data to dashboard, with a focus on questions a job seeker, analyst, or hiring team might actually ask:
+The goal was to practice the full path from messy source data to a dashboard that answers practical job-market questions:
 
-- What skills show up most often?
+- Which skills appear most often in job postings?
 - Which skills are commonly requested together?
-- How does demand change by role and seniority?
-- What can we learn from the salary data that is available?
+- How does demand differ by role and seniority?
+- What can be learned from postings with salary data?
 - How common are remote roles in this dataset?
 
 ## Dashboard Preview
@@ -27,6 +27,7 @@ I built it as a portfolio project to practice the full path from raw data to das
 ### Remote and Location Analysis
 
 ![Remote and Location Analysis](docs/screenshots/04_remote_location.png?v=20260630)
+
 ## Dataset Summary
 
 | Metric | Value |
@@ -39,6 +40,14 @@ I built it as a portfolio project to practice the full path from raw data to das
 | Salary coverage | 16.5% |
 | Clearly remote jobs | 26,330 |
 | Remote share | 44.9% |
+
+## Key Findings
+
+- SQL was the most requested skill, appearing in 29,223 cleaned job postings.
+- Excel, Python, Tableau, and Power BI were also among the strongest skill signals.
+- Salary data was available for only 16.5% of postings, so salary analysis is limited to salary-listed jobs.
+- Remote roles were common, but broad locations such as `Anywhere` and `United States` needed to be handled carefully.
+- The job-skill bridge table made it possible to analyze skill combinations instead of only individual skills.
 
 Top parsed skills by job count:
 
@@ -54,16 +63,16 @@ Top parsed skills by job count:
 
 The dataset comes from Kaggle:
 
-[Data Analyst Job Postings - Kaggle]([data/raw/source.txt](https://www.kaggle.com/datasets/lukebarousse/data-analyst-job-postings-google-search?resource=download))
+[Data Analyst Job Postings - Kaggle](https://www.kaggle.com/datasets/lukebarousse/data-analyst-job-postings-google-search?resource=download)
 
-The raw and processed CSV files are not included in this repository because they are large. The repo keeps the code, notebooks, SQL, and documentation needed to reproduce the work locally.
+Large raw and processed data files are not committed to this repository. The repo contains the notebooks, SQL, scripts, screenshots, and documentation needed to understand and reproduce the project locally.
 
 ## Pipeline
 
 ```text
 Kaggle CSV
     -> Python cleaning notebook
-    -> cleaned job, skill, and bridge tables
+    -> cleaned jobs, skills, and job-skill bridge tables
     -> data quality checks
     -> SQLite analytical database
     -> SQL query pack
@@ -72,13 +81,13 @@ Kaggle CSV
 
 ## Data Model
 
-The Power BI model is built around three main tables:
+The BI model is built around three main analytical tables:
 
-- `job_postings_clean`: one row per job posting
+- `job_postings_clean`: one row per cleaned job posting
 - `skills_clean`: one row per normalized skill
 - `job_skills_clean`: bridge table connecting jobs to skills
 
-The bridge table is the important piece. A single job can ask for many skills, and the same skill can appear across many jobs. Modeling it this way makes the skills page and skill co-occurrence analysis possible.
+The bridge table is the key modeling choice. A job can request many skills, and a skill can appear across many jobs. This makes skill demand, role-by-skill analysis, and skill co-occurrence analysis possible.
 
 ## Power BI Pages
 
@@ -88,19 +97,52 @@ High-level market snapshot: total jobs, remote share, salary coverage, top skill
 
 **Skills Demand**
 
-Focuses on skill demand, skill categories, skill differences by role and seniority, and skills that commonly appear together.
+Skill demand by individual skill and category, with filters for role, seniority, remote status, and selected skills.
 
 **Salary Analysis**
 
-Looks at annualized salary by role, seniority, skill, salary band, and remote status. Salary visuals use only postings where salary could be parsed.
+Annualized salary analysis by role, seniority, skill, salary band, and remote status. Salary visuals use only postings where salary could be parsed.
 
 **Remote and Location Analysis**
 
-Shows remote share, location quality, top locations, and how remote availability differs by job category and seniority.
+Remote-work availability, broad location handling, top companies posting remote roles, and reported location patterns.
+
+## Repository Structure
+
+```text
+job-market-bi/
+|-- data/
+|   |-- README.md
+|   |-- processed/.gitkeep
+|   `-- raw/source.txt
+|-- docs/
+|   |-- screenshots/
+|   |-- business_questions.md
+|   |-- data_dictionary.md
+|   |-- data_model.md
+|   |-- data_quality_report.md
+|   `-- sql_load_validation.md
+|-- notebooks/
+|   |-- 01_data_cleaning.ipynb
+|   `-- 02_quality_analysis.ipynb
+|-- powerbi/
+|   |-- DAX_Measures.md
+|   `-- README.md
+|-- sql/
+|   |-- analytics_queries_sqlite.sql
+|   `-- create_sqlite_tables.sql
+|-- src/
+|   |-- load_sqlite_db.py
+|   `-- smoke_test_sql_queries.py
+|-- PROJECT.md
+|-- requirements.txt
+|-- tasks.md
+`-- README.md
+```
 
 ## Reproducing The Project
 
-1. Download the Kaggle dataset listed in `data/raw/source.txt`.
+1. Download the Kaggle dataset listed above.
 2. Place the raw CSV at:
 
 ```text
@@ -144,12 +186,12 @@ The following files are intentionally not committed:
 - Power BI `.pbix` files
 - local virtual environments
 
-The local Power BI file is over the usual comfortable GitHub size for normal commits. I plan to share the dashboard through screenshots in this README, and optionally attach the `.pbix` to a GitHub Release later.
+The Power BI report is represented in this repository through screenshots and DAX documentation. The `.pbix` file can be shared separately as a GitHub Release asset if needed.
 
 ## Limitations
 
 - Salary data is available for only part of the dataset, so salary charts need sample-size context.
-- Remote status is cleaned and inferred from available fields, but broad locations such as `United States` are not treated as clearly remote.
+- Remote status is cleaned and inferred from available fields, while broad location values are kept separate from clearly remote jobs.
 - Skill extraction uses parsed description tokens, so it is useful for analysis but not perfect natural-language understanding.
 - This is a snapshot dataset, not a live job-market feed.
 
