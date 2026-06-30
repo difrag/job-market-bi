@@ -14,19 +14,19 @@ I built it as a portfolio project to practice the full path from raw data to das
 
 ### Executive Overview
 
-![Executive Overview](docs/screenshots/01_executive_overview.png)
+![Executive Overview](docs/screenshots/01_executive_overview.png?v=20260630)
 
 ### Skills Demand
 
-![Skills Demand](docs/screenshots/02_skills_demand.png)
+![Skills Demand](docs/screenshots/02_skills_demand.png?v=20260630)
 
 ### Salary Analysis
 
-![Salary Analysis](docs/screenshots/03_salary_analysis.png)
+![Salary Analysis](docs/screenshots/03_salary_analysis.png?v=20260630)
 
 ### Remote and Location Analysis
 
-![Remote and Location Analysis](docs/screenshots/04_remote_location.png)
+![Remote and Location Analysis](docs/screenshots/04_remote_location.png?v=20260630)
 ## Dataset Summary
 
 | Metric | Value |
