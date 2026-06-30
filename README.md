@@ -20,10 +20,6 @@ I built it as a portfolio project to practice the full path from raw data to das
 
 ![Skills Demand](docs/screenshots/02_skills_demand.png)
 
-### Skills That Appear Together
-
-![Skills That Appear Together](docs/screenshots/02_1_skills_demand.png)
-
 ### Salary Analysis
 
 ![Salary Analysis](docs/screenshots/03_salary_analysis.png)
